@@ -1,0 +1,92 @@
+TIPS for data preprocessing
+
+get the null values by percentage using
+round(100*(data.isnull().sum()/len(data.index)), 2)
+
+drop all columns having more than 70% null values
+
+for categorial columns, use countplot to find the highest occuring value
+and fill it in the null
+
+for categorial columns, COUNTPLOT is used
+for numeric columns, BOXPLOT is used
+
+if there is too much variance in any parameter then it is of no value
+if null values are more than 45% then also it is of no use
+
+we can drop that columns
+
+in categorial columns,
+if more than 50% of data is of one type, then we should fill all the
+null values with that one data
+
+if there are too many option and user has their own textbox to
+write the answer,
+we can fill the null values by something like others
+
+drop the rows if they are under 2% null
+
+
+
+
+
+
+after data is cleaned, we can move with the ANALYSIS PART
+
+find the target variable
+most probably it will be a univariate variable
+
+Data Visualization: Use techniques like count plots, 
+histograms, scatter plots, boxplots, etc., to explore the distribution 
+of features, identify patterns, and visualize relationships between variables.
+
+Use countplot with hue=dependent_variable and gain insights like 
+distribution of the independent variable across different categories 
+of the dependent variable.
+gain useful conclusions from it.
+
+if a column has many diff values and only few values are repeated many times,
+then rest of the values can be put to "others"category.
+also check for duplication due to capitalization or spelling mistake.
+
+for numerical columns, use boxplot and describe method along with 
+percentile filter to check for outliers and remove values with
+percentile less than 0.05 and more than 0.95
+
+
+REMOVE the columns from which no conclusion can be drawn as they are 
+useless for prediction and only confuse the model.
+
+convert the boolean values to 0s and 1s.
+this can be also done by map() function
+
+use one-hot and dummy encoding for categorial columns
+
+drop the columns that have each unique values like IDs or Mobile Number
+
+now the analysis part is complete.
+
+
+
+
+split the independent and dependent variables into two diff dataframe X&Y.
+
+now split the data into train and test using train_test_split()
+
+use feature scaling to scale the data specially in algorithms like
+regression, k means clustering and KNN.
+
+build the first model from statsmodel or manually.
+
+use RFE to select the important columns(preferably keep no of cols near to 15)
+
+make a new dataframe for selected columns and put it in the model.
+
+if built from statsmodel,
+use summary() method to see the p values and minimize it by removing
+the higher p value columns.
+
+use predict to get the output.
+
+also check the vif of each column and make sure it is below 2.
+
