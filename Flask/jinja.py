@@ -28,7 +28,7 @@ def success(score):
 
     return render_template('results.html', result=res,marks=score)
 
-
+#this int: is called variable rule. when used it only allows int to be entered
 @app.route('/successres/<int:score>')
 def successres(score):
     res = ""
