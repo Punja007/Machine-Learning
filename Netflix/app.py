@@ -3,10 +3,10 @@ import pandas as pd
 import streamlit as st
 
 #loading the datas from ipynb file
-df = pickle.load(open('data_to_dict.pkl',mode='rb'))
+df = pickle.load(open(r"C:\large git files\Netfix movie recommendation\data_to_dict.pkl",mode='rb'))
 df = pd.DataFrame(df)
 
-similarity = data = pickle.load(open('similarity.pkl',mode='rb'))
+similarity = data = pickle.load(open(r"C:\large git files\Netfix movie recommendation\similarity.pkl",mode='rb'))
 
 def recommend(movie):
     recommended = []
